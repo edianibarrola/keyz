@@ -64,4 +64,26 @@ body {
 .fretboard .root-note {
   background-color: #6bfa77; /* This will make the root note red. Adjust the color as needed. */
 }
-  
+.fretboard .root {
+  background-color: #ff4d4d;
+}
+
+.fretboard .minor-third {
+  background-color: #add8e6;  /* Light blue */
+}
+
+.fretboard .major-third {
+  background-color: #5151cf;  /* Dark blue */
+}
+
+.fretboard .perfect-fifth {
+  background-color: #32cd32;  /* Green */
+}
+
+.fretboard .minor-seventh {
+  background-color: #90ee90;  /* Light green */
+}
+
+.fretboard .major-seventh {
+  background-color: #006400;  /* Dark green */
+}
