@@ -47,20 +47,21 @@ body {
     border-radius: 12px;
     padding: 20px;
   }
-  .fretboard {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 strings */
-    gap: 10px; /* Adjust spacing between strings and frets */
-  }
-  
-  .string {
-    border-top: 2px solid black;
-    height: 100%;
-  }
-  
-  .fret {
-    border-left: 2px solid black;
-    width: 100%;
-    height: 40px; /* Adjust fretboard height */
-  }
+  .fretboard .string {
+    display: flex;
+    margin: 5px 0;
+}
+
+.fretboard .fret {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #222222;
+}
+
+.fretboard .highlighted {
+    background-color: #ffeb3b;
+}
+.fretboard .root-note {
+  background-color: #6bfa77; /* This will make the root note red. Adjust the color as needed. */
+}
   
