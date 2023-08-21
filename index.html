@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chord Visualization with Audio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Chord Visualization with Audio</h1>
+      </header>
+
+      <div class="content">
+        <div class="input-panel">
+          <label for="rootNote">Root Note</label>
+          <select id="rootNote">
+            <!-- Options for root notes -->
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="B">B</option>
+          </select>
+
+          <label for="chordStyle">Chord Style</label>
+          <select id="chordStyle">
+            <!-- Options for chord styles -->
+            <option value="maj">Major</option>
+            <option value="min">Minor</option>
+            <option value="7">Dominant 7th</option>
+            <option value="maj7">Major 7th</option>
+            <option value="min7">Minor 7th</option>
+            <option value="dim">Diminished</option>
+            <option value="aug">Augmented</option>
+            <!-- Add more options for other chord styles -->
+          </select>
+        </div>
+        <button id="generateSound">Generate Sound</button>
+        <div class="fretboard">
+          <!-- Fretboard visualization -->
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.26/Tone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/teoria/0.6.6/teoria.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

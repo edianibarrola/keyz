@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #d9e0e7;
+    box-shadow: 10px 10px 30px #bdc4cc, -10px -10px 30px #f4f7fc;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .header {
+    background-color: #bdc4cc;
+    padding: 20px;
+    border-bottom: 1px solid #a0a7af;
+    text-align: center;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .input-panel {
+    background-color: #d9e0e7;
+    box-shadow: inset 5px 5px 10px #bdc4cc, inset -5px -5px 10px #f4f7fc;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .fretboard {
+    background-color: #d9e0e7;
+    box-shadow: 5px 5px 10px #bdc4cc, -5px -5px 10px #f4f7fc;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .fretboard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 strings */
+    gap: 10px; /* Adjust spacing between strings and frets */
+  }
+  
+  .string {
+    border-top: 2px solid black;
+    height: 100%;
+  }
+  
+  .fret {
+    border-left: 2px solid black;
+    width: 100%;
+    height: 40px; /* Adjust fretboard height */
+  }
+  
