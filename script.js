@@ -62,23 +62,23 @@ function visualizeOnFretboard(notes, instrument, rootNote) {
 }
 
 function getIntervalClass(note, root) {
-    const noteDiff = NOTES.indexOf(note) - NOTES.indexOf(root);
-    switch (noteDiff) {
-        case 0:
-            return 'root';
-        case 3:
-            return 'minor-third';
-        case 4:
-            return 'major-third';
-        case 7:
-            return 'perfect-fifth';
-        case 10:
-            return 'minor-seventh';
-        case 11:
-            return 'major-seventh';
-        default:
-            return '';
-    }
+  const noteDiff = (NOTES.indexOf(note) - NOTES.indexOf(root) + NOTES.length) % NOTES.length;
+  switch (noteDiff) {
+      case 0:
+          return 'root';
+      case 3:
+          return 'minor-third';
+      case 4:
+          return 'major-third';
+      case 7:
+          return 'perfect-fifth';
+      case 10:
+          return 'minor-seventh';
+      case 11:
+          return 'major-seventh';
+      default:
+          return '';
+  }
 }
 
 // Event Listener for the Button
