@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chord Visualization </title>
+    <title>Chord and Scale Visualization</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <h1>Chord Visualization</h1>
+        <h1>Chord and Scale Visualization</h1>
       </header>
 
       <div class="content">
@@ -34,6 +34,8 @@
           <label for="chordStyle">Chord Style</label>
           <select id="chordStyle">
             <!-- Options for chord styles -->
+            <option value="none">None</option>
+
             <option value="maj">Major</option>
             <option value="min">Minor</option>
             <option value="7">Dominant 7th</option>
@@ -43,11 +45,23 @@
             <option value="aug">Augmented</option>
             <!-- Add more options for other chord styles -->
           </select>
+
+          <label for="scaleType">Scale Type</label>
+          <select id="scaleType">
+            <option value="none">None</option>
+
+            <option value="major">Major</option>
+            <option value="minor">Natural Minor</option>
+            <option value="dorian">Dorian</option>
+            <option value="blues">Blues</option>
+            <!-- Add more options for other scales -->
+          </select>
+
           <label for="instrument">Instrument</label>
-<select id="instrument">
-    <option value="guitar">Guitar</option>
-    <option value="bass">4-String Bass</option>
-</select>
+          <select id="instrument">
+            <option value="guitar">Guitar</option>
+            <option value="bass">4-String Bass</option>
+          </select>
 
         </div>
         <button id="generateSound">Generate Frets</button>
@@ -57,9 +71,6 @@
       </div>
     </div>
     <!-- <script src="teoria.js"></script> -->
-<script src="script.js"></script>
-
-    
-
+    <script src="script.js"></script>
   </body>
 </html>

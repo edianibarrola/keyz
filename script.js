@@ -23,21 +23,49 @@ function getChordNotes(root, chordType) {
     }
 }
 
-function visualizeChord() {
+function getScaleNotes(root, scaleType) {
+    let intervals = [];
+    switch (scaleType) {
+        case "major":
+            intervals = [0, 2, 4, 5, 7, 9, 11];
+            break;
+        case "minor":
+            intervals = [0, 2, 3, 5, 7, 8, 10];
+            break;
+        case "dorian":
+            intervals = [0, 2, 3, 5, 7, 9, 10];
+            break;
+        case "blues":
+            intervals = [0, 3, 5, 6, 7, 10];
+            break;
+        default:
+            return [];
+    }
+    return intervals.map(i => getNoteByInterval(root, i));
+}
+
+
+function visualize() {
     const rootNote = document.getElementById("rootNote").value;
     const chordStyle = document.getElementById("chordStyle").value;
-    const instrument = document.getElementById("instrument").value; // Get selected instrument
+    const scaleType = document.getElementById("scaleType").value;
+    const instrument = document.getElementById("instrument").value;
 
-    const notes = getChordNotes(rootNote, chordStyle);
+    let notes;
 
-    visualizeOnFretboard(notes, instrument, rootNote); // Pass the rootNote as a parameter
+    if (scaleType !== "none") {
+        notes = getScaleNotes(rootNote, scaleType);
+    } else {
+        notes = getChordNotes(rootNote, chordStyle);
+    }
+
+    visualizeOnFretboard(notes, instrument, rootNote);
 }
 
 function visualizeOnFretboard(notes, instrument, rootNote) {
     const fretboardDiv = document.querySelector(".fretboard");
-    fretboardDiv.innerHTML = ''; // Clear previous visualization
+    fretboardDiv.innerHTML = '';
 
-    // Set the strings based on the instrument
     const strings = instrument === "guitar" ? ['E', 'A', 'D', 'G', 'B', 'E'] : ['E', 'A', 'D', 'G'];
 
     strings.forEach((string, idx) => {
@@ -50,8 +78,12 @@ function visualizeOnFretboard(notes, instrument, rootNote) {
 
             const noteOnThisFret = getNoteByInterval(string, fret);
             if (notes.includes(noteOnThisFret)) {
-                fretDiv.textContent = noteOnThisFret; // Display the note name on the fret
-                fretDiv.classList.add(getIntervalClass(noteOnThisFret, rootNote));
+                fretDiv.textContent = noteOnThisFret;
+                const intervalClass = getIntervalClass(noteOnThisFret, rootNote, notes);
+                
+                if (intervalClass) {
+                    fretDiv.classList.add(intervalClass);
+                }
             }
 
             stringDiv.appendChild(fretDiv);
@@ -61,27 +93,45 @@ function visualizeOnFretboard(notes, instrument, rootNote) {
     });
 }
 
-function getIntervalClass(note, root) {
-  const noteDiff = (NOTES.indexOf(note) - NOTES.indexOf(root) + NOTES.length) % NOTES.length;
-  switch (noteDiff) {
-      case 0:
-          return 'root';
-      case 3:
-          return 'minor-third';
-      case 4:
-          return 'major-third';
-      case 7:
-          return 'perfect-fifth';
-      case 10:
-          return 'minor-seventh';
-      case 11:
-          return 'major-seventh';
-      default:
-          return '';
-  }
+function getIntervalClass(note, root, allNotes) {
+    if (note === root) {
+        return 'root';
+    }
+    
+    if (!allNotes.includes(note)) {
+        return '';
+    }
+
+    const noteDiff = (NOTES.indexOf(note) - NOTES.indexOf(root) + NOTES.length) % NOTES.length;
+    if (allNotes.includes(note)) {
+        switch (noteDiff) {
+            case 0:
+                return 'root';
+            case 2:
+                return 'major-second';
+            case 3:
+                return 'minor-third';
+            case 4:
+                return 'major-third';
+            case 5:
+                return 'perfect-fourth';
+            case 6:
+                return 'diminished-fifth';
+            case 7:
+                return 'perfect-fifth';
+            case 8:
+                return 'minor-sixth';
+            case 9:
+                return 'major-sixth';
+            case 10:
+                return 'minor-seventh';
+            case 11:
+                return 'major-seventh';
+        }
+    }
+    return '';
 }
 
-// Event Listener for the Button
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("generateSound").addEventListener("click", visualizeChord);
+    document.getElementById("generateSound").addEventListener("click", visualize);
 });

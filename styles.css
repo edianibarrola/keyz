@@ -1,89 +1,124 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0e5ec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .container {
-    background-color: #d9e0e7;
-    box-shadow: 10px 10px 30px #bdc4cc, -10px -10px 30px #f4f7fc;
-    border-radius: 20px;
-    overflow: hidden;
-    width: 80%;
-    max-width: 600px;
-  }
-  
-  .header {
-    background-color: #bdc4cc;
-    padding: 20px;
-    border-bottom: 1px solid #a0a7af;
-    text-align: center;
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  
-  .input-panel {
-    background-color: #d9e0e7;
-    box-shadow: inset 5px 5px 10px #bdc4cc, inset -5px -5px 10px #f4f7fc;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 6px;
-  }
-  
-  .fretboard {
-    background-color: #d9e0e7;
-    box-shadow: 5px 5px 10px #bdc4cc, -5px -5px 10px #f4f7fc;
-    border-radius: 12px;
-    padding: 20px;
-  }
-  .fretboard .string {
-    display: flex;
-    margin: 5px 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0e5ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #d9e0e7;
+  box-shadow: 10px 10px 30px #bdc4cc, -10px -10px 30px #f4f7fc;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 600px;
+}
+
+.header {
+  background-color: #bdc4cc;
+  padding: 20px;
+  border-bottom: 1px solid #a0a7af;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+.input-panel {
+  background-color: #d9e0e7;
+  box-shadow: inset 5px 5px 10px #bdc4cc, inset -5px -5px 10px #f4f7fc;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.fretboard {
+  background-color: #d9e0e7;
+  box-shadow: 5px 5px 10px #bdc4cc, -5px -5px 10px #f4f7fc;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.fretboard .string {
+  display: flex;
+  margin: 5px 0;
 }
 
 .fretboard .fret {
-    width: 30px;
-    height: 20px;
-    border: 1px solid #222222;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #222222;
 }
 
 .fretboard .highlighted {
-    background-color: #ffeb3b;
+  background-color: #ffeb3b;
 }
-.fretboard .root-note {
-  background-color: #6bfa77; /* This will make the root note red. Adjust the color as needed. */
-}
+
 .fretboard .root {
-  background-color: #ff4d4d;
+  background-color: #0066cc;  /* Soft Blue for Root */
+  color: white;
+}
+
+.fretboard .major-second {
+  background-color: #3399ff;  /* Lighter Blue */
+  color: black;
 }
 
 .fretboard .minor-third {
-  background-color: #add8e6;  /* Light blue */
+  background-color: #33cccc;  /* Turquoise */
+  color: black;
 }
 
 .fretboard .major-third {
-  background-color: #5151cf;  /* Dark blue */
+  background-color: #33cc99;  /* Aqua */
+  color: black;
+}
+
+.fretboard .perfect-fourth {
+  background-color: #669999;  /* Teal */
+  color: white;
+}
+
+.fretboard .diminished-fifth {
+  background-color: #996699;  /* Purple-ish */
+  color: white;
 }
 
 .fretboard .perfect-fifth {
-  background-color: #32cd32;  /* Green */
+  background-color: #993399;  /* Darker Purple */
+  color: white;
+}
+
+.fretboard .minor-sixth {
+  background-color: #cc6699;  /* Mauve */
+  color: black;
+}
+
+.fretboard .major-sixth {
+  background-color: #cc99cc;  /* Light Mauve */
+  color: black;
 }
 
 .fretboard .minor-seventh {
-  background-color: #90ee90;  /* Light green */
+  background-color: #cc99ff;  /* Lavender */
+  color: black;
 }
 
 .fretboard .major-seventh {
-  background-color: #006400;  /* Dark green */
+  background-color: #ccccff;  /* Light Lavender */
+  color: black;
+}
+
+.fretboard .highlighted {
+  background-color: #e6f2ff;  /* Very Light Blue */
+  color: black;
 }
